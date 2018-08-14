@@ -1,0 +1,23 @@
+{
+    "name": "User Management",
+    "slug": "user_management",
+    "namespace": "MOA\\UserManagement",
+    "provider": "",
+    "description": "",
+    "logo": "",
+    "url": "",
+    "author": "",
+    "version": "",
+    "modules": [
+
+    ],
+    "plugins": [
+
+    ],
+    "widgets": [
+
+    ],
+    "themes": [
+
+    ]
+}
