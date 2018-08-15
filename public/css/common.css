@@ -1,0 +1,168 @@
+html,body {
+    background: #EFF3F4;
+    font-family: 'Open Sans', serif;
+}
+.hero-body .container {
+    max-width: 700px;
+}
+.hero-body .title {
+    color: hsl(192,17%,99%) !important;
+}
+.hero-body .subtitle {
+    color: hsl(192,17%,99%) !important;
+    padding-top: 2rem;
+    line-height: 1.5;
+}
+.features {
+    padding: 5rem 0;
+}
+.box.cta {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+}
+.card-image > .fa {
+    font-size: 8rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: #209cee;
+}
+.card-content .content {
+    font-size: 14px;
+    margin: 1rem 1rem;
+}
+.card-content .content h4 {
+    font-size: 16px;
+    font-weight: 700;
+}
+.card {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+    margin-bottom: 2rem;
+}
+.intro {
+    padding: 5rem 0;
+    text-align: center;
+}
+.sandbox {
+    padding: 5rem 0;
+}
+.tile.notification {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.is-shady {
+    animation: flyintoright .4s backwards;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, .1) 0 1px 0;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 10px;
+    position: relative;
+    transition: all .2s ease-in-out;
+}
+.is-shady:hover {
+    box-shadow: 0 10px 16px rgba(0, 0, 0, .13), 0 6px 6px rgba(0, 0, 0, .19);
+}
+/*adds font awesome stars*/
+footer li:before {
+    content: '\f1b2';
+    font-family: 'FontAwesome';
+    float: left;
+    margin-left: -1.5em;
+    color: #147efb;
+}
+
+.nav.is-dark {
+    background-color: #232B2D;
+    color: #F6F7F7;
+}
+.nav.is-dark .nav-item a, .nav.is-dark a.nav-item {
+    color: #F6F7F7;
+}
+.nav.is-dark .nav-item a.button.is-default {
+    color: #F6F7F7;
+    background-color: transparent;
+    border-width: 2px;
+}
+.nav.menu {
+    border-bottom: 1px solid #e1e1e1;
+}
+.nav.menu .nav-item .icon-btn {
+    border: 3px solid #B7C6C9;
+    border-radius: 90px;
+    padding: 5px 7px;
+    color: #B7C6C9;
+}
+.nav.menu .nav-item.is-active .icon-btn {
+    color: #2EB398;
+    border: 3px solid #2EB398;
+}
+.nav.menu .nav-item .icon-btn .fa {
+    font-size: 20px;
+    color: #B7C6C9;
+}
+.nav.menu .nav-item.is-active .icon-btn .fa {
+    color: #2EB398;
+}
+.aside {
+    display:block;
+    background-color: #F9F9F9;
+    border-right: 1px solid #DEDEDE;
+}
+.messages {
+    display:block;
+    background-color: #fff;
+    border-right: 1px solid #DEDEDE;
+}
+.message {
+    display:block;
+    background-color: #fff;
+}
+.aside .compose {
+    height: 95px;
+    margin:0 -10px;
+    padding: 25px 30px;
+}
+.aside .compose .button {
+    color: #F6F7F7;
+}
+.aside .compose .button .compose {
+    font-size: 14px;
+    font-weight: 700;
+}
+.aside .main {
+    padding: 40px;
+    color: #6F7B7E;
+}
+.aside .title {
+    color: #6F7B7E;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.aside .main .item {
+    display: block;
+    padding: 10px 0;
+    color: #6F7B7E;
+}
+.aside .main .item.active {
+    background-color: #F1F1F1;
+    margin: 0 -50px;
+    padding-left: 50px;
+}
+.aside .main .item:active,.aside .main .item:hover {
+    background-color: #F2F2F2;
+    margin: 0 -50px;
+    padding-left: 50px;
+}
+.aside .main .icon {
+    font-size: 19px;
+    padding-right: 30px;
+    color: #A0A0A0;
+}
+.aside .main .name {
+    font-size: 15px;
+    color: #5D5D5D;
+    font-weight: 500;
+}
