@@ -1,6 +1,6 @@
 {
     "name": "User Management",
-    "slug": "user_management",
+    "slug": "UserManagement",
     "namespace": "MOA\\UserManagement",
     "provider": "",
     "description": "",

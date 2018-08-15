@@ -35,10 +35,11 @@
                                     <span></span>
                                     <span></span>
                                 </div>
-                                <div class="navbar-end">
-                                    <div class="navbar-item">
-                                        <button class="button is-default">Test</button>
-                                    </div>
+                            </div>
+
+                            <div class="navbar-end">
+                                <div class="navbar-item">
+                                    <button class="button is-default">Test</button>
                                 </div>
                             </div>
                         </div>
