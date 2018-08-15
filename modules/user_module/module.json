@@ -1,0 +1,11 @@
+{
+    "alias": "user_module",
+    "name": "MOA User Module",
+    "author": "Sujit Baniya",
+    "description": "MOA User Module",
+    "namespace": "App\\Module\\UserModule",
+    "version": "1.0",
+    "autoload": "psr-4",
+    "enabled": true,
+    "installed": true
+}

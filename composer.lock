@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "eb0ca23045da40ac52fb6db7858e75fb",
-    "content-hash": "740c4e3e1ce01a2cd39f2c77ad8e3079",
+    "hash": "17af99feff70c9b9120de991bcf85efd",
+    "content-hash": "680b7de22d9c5c10900f81dc22398b20",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -859,6 +859,51 @@
                 "psr-3"
             ],
             "time": "2017-06-19 01:22:40"
+        },
+        {
+            "name": "mrabbani/laravel-module-manager",
+            "version": "v1.5.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mrabbani/laravel_module_manager.git",
+                "reference": "8040a22258d96fc9a764558a2d52660c7c9b3dc7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mrabbani/laravel_module_manager/zipball/8040a22258d96fc9a764558a2d52660c7c9b3dc7",
+                "reference": "8040a22258d96fc9a764558a2d52660c7c9b3dc7",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "5.5.*|5.6.*",
+                "illuminate/database": "5.5.*|5.6.*",
+                "php": "^7.1.3"
+            },
+            "type": "laravel",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Mrabbani\\ModuleManager\\Providers\\ModuleProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mrabbani\\ModuleManager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "mrabbani",
+                    "email": "mahbub.rucse@gmail.com"
+                }
+            ],
+            "description": "Laravel Module Management",
+            "time": "2018-04-10 18:46:30"
         },
         {
             "name": "nesbot/carbon",
