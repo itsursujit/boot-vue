@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Nwidart\Modules\Facades\Module;
 
 class HomeController extends Controller
 {
