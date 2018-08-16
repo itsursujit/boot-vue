@@ -11,6 +11,9 @@
 |
 */
 
+Route::group(['domain' => '{domain}', 'middleware' => ['site']], function() {
+
+});
 Route::get('/', function () {
     return view('welcome');
 });
