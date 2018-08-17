@@ -16,7 +16,6 @@ class SiteMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        dd(1);
         return $next($request);
     }
 }
