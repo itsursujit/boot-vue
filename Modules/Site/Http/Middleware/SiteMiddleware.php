@@ -4,42 +4,26 @@ namespace Modules\Site\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Modules\Site\Entities\Site;
+use Nwidart\Modules\Facades\Module;
 
 class SiteMiddleware
 {
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure                 $next
+     *
      * @return mixed
+     * @throws \Throwable
      */
     public function handle(Request $request, Closure $next)
     {
-        $host   = request()->getHttpHost();
-        $subDomains = $this->getSubdomains($host);
+        $site = site();
+        dd($site->owner());
+        throw_if(empty($site), new \Exception("No Website Found"));
+        $request->site = $site;
         return $next($request);
-    }
-
-
-
-    function getDomain($domain)
-    {
-        if(preg_match("/(?P<domain>[a-z0-9][a-z0-9\-]{1,63}\.[a-z\.]{2,6})$/i", $domain, $matches))
-        {
-            return $matches['domain'];
-        } else {
-            return $domain;
-        }
-    }
-
-    function getSubdomains($domain)
-    {
-        $subdomains = $domain;
-        $domain = $this->getDomain($subdomains);
-
-        $subdomains = rtrim(strstr($subdomains, $domain, true), '.');
-
-        return $subdomains;
     }
 }

@@ -14,3 +14,4 @@
 if (!app()->routesAreCached()) {
     require __DIR__ . '/Http/routes.php';
 }
+return __DIR__ . '/helpers.php';

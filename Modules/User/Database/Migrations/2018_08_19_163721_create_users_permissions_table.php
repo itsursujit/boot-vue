@@ -1,11 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBlogTable extends Migration
+class CreateUsersPermissionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,14 +13,16 @@ class CreateBlogTable extends Migration
      */
     public function up()
     {
-        Schema::create('blog', function (Blueprint $table) {
+        Schema::create('users_permissions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 120);
+            $table->integer('site_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->integer('module_id')->unsigned();
+            $table->longText('permissions');
             $table->tinyInteger('status')->unsigned()->default(1);
+            $table->softDeletes();
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->dateTime('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
-            $table->softDeletes();
-            $table->engine = 'InnoDB';
         });
     }
 
@@ -32,6 +33,6 @@ class CreateBlogTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blog');
+        Schema::dropIfExists('users_permissions');
     }
 }
