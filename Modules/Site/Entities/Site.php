@@ -15,7 +15,7 @@ class Site extends Model
 
     public function owners()
     {
-        return $this->belongsToMany(User::class, 'users_sites', 'site_id', 'id');
+        return $this->belongsToMany(User::class, 'users_sites');
     }
 
     public function metas()

@@ -5,6 +5,7 @@ namespace Modules\Site\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Modules\Site\Entities\Site;
+use Modules\User\Entities\User;
 use Nwidart\Modules\Facades\Module;
 
 class SiteMiddleware
@@ -21,7 +22,6 @@ class SiteMiddleware
     public function handle(Request $request, Closure $next)
     {
         $site = site();
-        dd($site->owner());
         throw_if(empty($site), new \Exception("No Website Found"));
         $request->site = $site;
         return $next($request);

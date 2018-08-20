@@ -19,7 +19,6 @@ class CreateModulesTable extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->string('description')->nullable();
-            $table->integer('level')->default(1);
             $table->tinyInteger('status')->unsigned()->default(1);
             $table->softDeletes();
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

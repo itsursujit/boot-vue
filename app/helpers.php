@@ -19,7 +19,7 @@ if( !function_exists('site'))
 {
     function site($key = null)
     {
-        dd(\Nwidart\Modules\Facades\Module::config('User'));
+
         $host   = request()->getHttpHost();
         $subDomains = getSubDomains($host);
         if(in_array($subDomains, ['', 'main', 'www']))
@@ -27,7 +27,7 @@ if( !function_exists('site'))
             $subDomains = 'main';
         }
         $site = Cache::remember('site:' . $subDomains, 7 * 24* 60, function () use ($subDomains) {
-            return Site::where('slug', $subDomains)->first();
+            $site = Site::where('slug', $subDomains)->first();
         });
         return $site;
     }
