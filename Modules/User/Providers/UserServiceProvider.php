@@ -51,6 +51,9 @@ class UserServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__.'/../Config/config.php', 'user'
         );
+        $this->mergeConfigFrom(
+            __DIR__.'/../Config/permissions.php', 'user.permissions'
+        );
     }
 
     /**

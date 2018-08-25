@@ -27,7 +27,7 @@ if( !function_exists('site'))
             $subDomains = 'main';
         }
         $site = Cache::remember('site:' . $subDomains, 7 * 24* 60, function () use ($subDomains) {
-            $site = Site::where('slug', $subDomains)->first();
+            return Site::where('slug', $subDomains)->first();
         });
         return $site;
     }

@@ -1,11 +1,11 @@
 <?php
 
-namespace Modules\Site\Providers;
+namespace Modules\Contact\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
 
-class SiteServiceProvider extends ServiceProvider
+class ContactServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
@@ -46,13 +46,10 @@ class SiteServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         $this->publishes([
-            __DIR__.'/../Config/config.php' => config_path('site.php'),
+            __DIR__.'/../Config/config.php' => config_path('contact.php'),
         ], 'config');
         $this->mergeConfigFrom(
-            __DIR__.'/../Config/config.php', 'site'
-        );
-        $this->mergeConfigFrom(
-            __DIR__.'/../Config/permissions.php', 'site.permissions'
+            __DIR__.'/../Config/config.php', 'contact'
         );
     }
 
@@ -63,7 +60,7 @@ class SiteServiceProvider extends ServiceProvider
      */
     public function registerViews()
     {
-        $viewPath = resource_path('views/modules/site');
+        $viewPath = resource_path('views/modules/contact');
 
         $sourcePath = __DIR__.'/../Resources/views';
 
@@ -72,8 +69,8 @@ class SiteServiceProvider extends ServiceProvider
         ],'views');
 
         $this->loadViewsFrom(array_merge(array_map(function ($path) {
-            return $path . '/modules/site';
-        }, \Config::get('view.paths')), [$sourcePath]), 'site');
+            return $path . '/modules/contact';
+        }, \Config::get('view.paths')), [$sourcePath]), 'contact');
     }
 
     /**
@@ -83,12 +80,12 @@ class SiteServiceProvider extends ServiceProvider
      */
     public function registerTranslations()
     {
-        $langPath = resource_path('lang/modules/site');
+        $langPath = resource_path('lang/modules/contact');
 
         if (is_dir($langPath)) {
-            $this->loadTranslationsFrom($langPath, 'site');
+            $this->loadTranslationsFrom($langPath, 'contact');
         } else {
-            $this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'site');
+            $this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'contact');
         }
     }
 
