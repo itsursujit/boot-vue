@@ -23,13 +23,11 @@ class Address extends Model
         $this->morphTo();
     }
 
-
-
-    /**
-     * Get all of the videos that are assigned this tag.
-     */
-    public function contacts()
+    public static function getAddressable($class)
     {
-        return $this->morphedByMany(Contact::class, 'addressable');
+        if(!class_exists($class))
+            return null;
+
+        return $class::with('addresses')->get()->pluck('addresses')->flatten();
     }
 }

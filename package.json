@@ -10,7 +10,7 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
-        "axios": "^0.18",
+        "axios": "^0.18.0",
         "bulma": "^0.7.1",
         "bulma-extensions": "^2.2.0",
         "cross-env": "^5.1",
@@ -18,7 +18,24 @@
         "laravel-mix": "^2.0",
         "lodash": "^4.17.4",
         "popper.js": "^1.12",
-        "vue": "^2.5.7"
+        "vue": "^2.5.17"
     },
-    "dependencies": {}
+    "dependencies": {
+        "cropperjs": "^1.4.1",
+        "date-fns": "^1.29.0",
+        "dropzone": "^5.5.1",
+        "fuse.js": "^3.2.1",
+        "idb-keyval": "^3.1.0",
+        "keycode": "^2.2.0",
+        "lottie-web": "^5.2.1",
+        "plyr": "^3.4.3",
+        "vue-async-computed": "^3.4.1",
+        "vue-awesome": "^2.3.8",
+        "vue-clipboard2": "^0.2.1",
+        "vue-ls": "^3.1.0",
+        "vue-notif": "^1.1.9",
+        "vue-tippy": "^1.0.0",
+        "vue-touch": "^2.0.0-beta.4",
+        "vue2-filters": "^0.3.0"
+    }
 }
