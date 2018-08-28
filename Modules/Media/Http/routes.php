@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['middleware' => 'web', 'namespace' => 'Modules\Media\Http\Controllers'], function() {
-// MediaManager
-    ctf0\MediaManager\MediaRoutes::routes();
+Route::group(['middleware' => 'web', 'prefix' => 'media', 'namespace' => 'Modules\Media\Http\Controllers'], function()
+{
+    Route::get('/', 'MediaController@index');
 });
