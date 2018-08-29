@@ -23,7 +23,7 @@ class Address extends Model
         $this->morphTo();
     }
 
-    public static function getAddressable($class)
+    public static function getAddresses($class)
     {
         if(!class_exists($class))
             return null;

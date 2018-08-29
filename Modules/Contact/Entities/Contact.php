@@ -4,9 +4,12 @@ namespace Modules\Contact\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Modules\Address\Entities\Address;
+use Modules\Address\Traits\HasAddress;
 
 class Contact extends Model
 {
+    use HasAddress;
+
     protected $fillable = [
         "first_name",
         "middle_name",
@@ -20,8 +23,8 @@ class Contact extends Model
         "status"
     ];
 
-    public function addresses()
+    public function contactable()
     {
-        return $this->morphToMany(Address::class, 'addressable');
+        $this->morphTo();
     }
 }
