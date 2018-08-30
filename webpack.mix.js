@@ -1,5 +1,5 @@
 let mix = require('laravel-mix');
-
+let tailwindcss = require('tailwindcss');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -12,8 +12,6 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
-
-// MediaManager
-mix.sass('resources/assets/vendor/MediaManager/sass/media.scss', 'public/assets/vendor/MediaManager/style.css')
-    .copyDirectory('resources/assets/vendor/MediaManager/dist', 'public/assets/vendor/MediaManager')
+   .sass('resources/assets/sass/app.scss', 'public/css').options({
+        processCssUrls: false, postCss:[tailwindcss('./tailwind.js')],
+    });

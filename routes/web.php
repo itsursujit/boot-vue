@@ -39,7 +39,7 @@ Route::group(['domain' => '{domain}', 'middleware' => ['site']], function() {
     $contact->addresses()->save($address);*/
 });
 Route::get('/', function () {
-    return view('tailwind');
+    return view('welcome');
 });
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
