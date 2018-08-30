@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Hash;
 use Modules\User\Entities\User;
 
 Route::group(['domain' => '{domain}', 'middleware' => ['site']], function() {
-    $user = User::with('contacts', 'contacts.addresses')->first();
+    //$user = User::with('contacts', 'contacts.addresses')->first();
     //dd($user);
     /*$contact = new \Modules\Contact\Entities\Contact([
        'first_name' => 'rand-' . rand(1000, 2000),
