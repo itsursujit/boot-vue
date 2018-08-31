@@ -1,7 +1,28 @@
 let mix = require('laravel-mix');
 let tailwindcss = require('tailwindcss');
 require("laravel-mix-purgecss");
-let path =require("path");
+
+const fs = require('fs');
+const path = require('path');
+
+
+const moduleFolder = './Modules';
+
+const dirs = p => fs.readdirSync(p).filter(f => fs.statSync(path.resolve(p,f)).isDirectory())
+
+let modules = dirs(moduleFolder);
+/*
+modules.forEach(function(m){
+    let js = path.resolve(moduleFolder,m,'Asset','js', m.toLowerCase()+'.js');
+    mix.js(js);
+    let scss = path.resolve(moduleFolder,m,'Asset','scss', m.toLowerCase()+'.scss');
+    mix.sass(scss);
+    /!*path.join(__dirname, "./!**!/!*.html"),
+        path.join(__dirname, "./!**!/!*.vue"),
+        path.join(__dirname, "./!**!/!*.js"),
+        path.join(__dirname, "./!**!/!*.css")*!/
+});*/
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -18,24 +39,3 @@ mix.js('resources/assets/js/app.js', 'public/js')
        processCssUrls: false, postCss:[tailwindcss('./tailwind.js')],
     })
     .purgeCss();
-
-module.exports = {
-    configureWebpack: {
-        plugins: [
-            new PurgeCssPlugin({
-                paths: glob.sync([
-                    path.join(__dirname, "./**/*.html"),
-                    path.join(__dirname, "./**/*.vue"),
-                    path.join(__dirname, "./**/*.js"),
-                    path.join(__dirname, "./**/*.css")
-                ]),
-                extractors: [
-                    {
-                        extractor: TailwindExtractor,
-                        extensions: ["css", "js", "html", "vue"]
-                    }
-                ]
-            })
-        ]
-    }
-}
