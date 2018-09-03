@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <div class="wrapper flex">
+    <div class="wrapper flex primary">
         <div id="left-wrapper bg-grey p-10" class="w-1/6">
             <div id="logo-block">
                 <div id="logo">

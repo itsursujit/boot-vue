@@ -42,6 +42,13 @@
  * @import "components/forms";
  */
 
+
+@import "components/colors";
+@import "components/links";
+@import "components/forms";
+@import "components/image";
+@import "components/buttons";
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
@@ -66,8 +73,3 @@
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
  */
-textarea{ resize: vertical; }
-img{max-width:100%;}
-svg{fill:currentColor;}
-button, [role=button]{@apply .font-sans;}
-

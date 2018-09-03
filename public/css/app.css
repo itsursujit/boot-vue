@@ -1125,6 +1125,43 @@ table {
  * @import "components/forms";
  */
 
+.primary {
+  background-color: #3490dc;
+  color: #fff;
+}
+
+.success {
+  background-color: #38a89d;
+  color: #fff;
+}
+
+.danger {
+  background-color: #ef5753;
+  color: #fff;
+}
+
+.danger {
+  background-color: #ef5753;
+  color: #fff;
+}
+
+textarea {
+  resize: vertical;
+}
+
+img {
+  max-width: 100%;
+}
+
+svg {
+  fill: currentColor;
+}
+
+button,
+[role=button] {
+  font-family: system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
@@ -6824,23 +6861,6 @@ table {
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
  */
-
-textarea {
-  resize: vertical;
-}
-
-img {
-  max-width: 100%;
-}
-
-svg {
-  fill: currentColor;
-}
-
-button,
-[role=button] {
-  font-family: system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
 
 @media (min-width: 576px) {
   .sm\:list-reset {
