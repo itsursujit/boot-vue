@@ -41,5 +41,7 @@ Route::group(['domain' => '{domain}', 'middleware' => ['site']], function() {
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/laravel.io', 'Welcome@laravel');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/tailwind', 'HomeController@tailwind')->name('tailwind');

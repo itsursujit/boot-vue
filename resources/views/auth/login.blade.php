@@ -1,99 +1,46 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <section class="hero is-primary">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
+    <div class="flex items-center px-6 md:px-0">
+        <div class="w-full max-w-md md:mx-auto">
+            <div class="rounded shadow">
+                <div class="font-medium text-lg text-teal-darker bg-teal p-3 rounded-t">
                     Login
-                </h1>
-            </div>
-        </div>
-    </section>
-
-    <div class="columns is-marginless is-centered">
-        <div class="column is-5">
-            <div class="card">
-                <header class="card-header">
-                    <p class="card-header-title">Login</p>
-                </header>
-
-                <div class="card-content">
-                    <form class="login-form" method="POST" action="{{ route('login') }}">
+                </div>
+                <div class="bg-white p-3 rounded-b">
+                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
-                        <div class="field is-horizontal">
-                            <div class="field-label is-one-quarter">
-                                <label class="label">E-Mail Address</label>
-                            </div>
-
-                            <div class="field-body">
-                                <div class="field">
-                                    <p class="control">
-                                        <input class="input" id="email" type="email" name="email"
-                                               value="{{ old('email') }}" required autofocus>
-                                    </p>
-
-                                    @if ($errors->has('email'))
-                                        <p class="help is-danger">
-                                            {{ $errors->first('email') }}
-                                        </p>
-                                    @endif
-                                </div>
+                        <div class="flex items-stretch mb-3">
+                            <label for="email" class="text-right font-semibold text-grey-dark text-sm pt-2 pr-3 align-middle w-1/4">E-Mail Address</label>
+                            <div class="flex flex-col w-3/4">
+                                <input id="email" type="email" class="flex-grow h-8 px-2 border rounded {{ $errors->has('email') ? 'border-red-dark' : 'border-grey-light' }}" name="email" value="{{ old('email') }}" required autofocus>
+                                {!! $errors->first('email', '<span class="text-red-dark text-sm mt-2">:message</span>') !!}
                             </div>
                         </div>
 
-                        <div class="field is-horizontal">
-                            <div class="field-label">
-                                <label class="label">Password</label>
-                            </div>
-
-                            <div class="field-body">
-                                <div class="field">
-                                    <p class="control">
-                                        <input class="input" id="password" type="password" name="password" required>
-                                    </p>
-
-                                    @if ($errors->has('password'))
-                                        <p class="help is-danger">
-                                            {{ $errors->first('password') }}
-                                        </p>
-                                    @endif
-                                </div>
+                        <div class="flex items-stretch mb-4">
+                            <label for="password" class="text-right font-semibold text-grey-dark text-sm pt-2 pr-3 align-middle w-1/4">Password</label>
+                            <div class="flex flex-col w-3/4">
+                                <input id="password" type="password" class="flex-grow h-8 px-2 rounded border {{ $errors->has('password') ? 'border-red-dark' : 'border-grey-light' }}" name="password" required>
+                                {!! $errors->first('password', '<span class="text-red-dark text-sm mt-2">:message</span>') !!}
                             </div>
                         </div>
 
-                        <div class="field is-horizontal">
-                            <div class="field-label"></div>
-
-                            <div class="field-body">
-                                <div class="field">
-                                    <p class="control">
-                                        <label class="checkbox">
-                                            <input type="checkbox"
-                                                   name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                        </label>
-                                    </p>
-                                </div>
-                            </div>
+                        <div class="flex mb-4">
+                            <label class="w-3/4 ml-auto">
+                                <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> <span class="text-sm text-grey-dark"> Remember Me</span>
+                            </label>
                         </div>
 
-                        <div class="field is-horizontal">
-                            <div class="field-label"></div>
-
-                            <div class="field-body">
-                                <div class="field is-grouped">
-                                    <div class="control">
-                                        <button type="submit" class="button is-primary">Login</button>
-                                    </div>
-
-                                    <div class="control">
-                                        <a href="{{ route('password.request') }}">
-                                            Forgot Your Password?
-                                        </a>
-                                    </div>
-                                </div>
+                        <div class="flex">
+                            <div class="w-3/4 ml-auto">
+                                <button type="submit" class="bg-teal hover:bg-teal-dark text-white text-sm font-semibold py-2 px-4 rounded mr-3">
+                                    Login
+                                </button>
+                                <a class="no-underline hover:underline text-teal-darker text-sm" href="{{ route('password.request') }}">
+                                    Forgot Your Password?
+                                </a>
                             </div>
                         </div>
                     </form>

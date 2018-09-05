@@ -1,4 +1,27 @@
 let mix = require('laravel-mix');
+let tailwindcss = require('tailwindcss');
+require("laravel-mix-purgecss");
+
+const fs = require('fs');
+const path = require('path');
+
+
+const moduleFolder = './Modules';
+
+const dirs = p => fs.readdirSync(p).filter(f => fs.statSync(path.resolve(p,f)).isDirectory())
+
+let modules = dirs(moduleFolder);
+/*
+modules.forEach(function(m){
+    let js = path.resolve(moduleFolder,m,'Asset','js', m.toLowerCase()+'.js');
+    mix.js(js);
+    let scss = path.resolve(moduleFolder,m,'Asset','scss', m.toLowerCase()+'.scss');
+    mix.sass(scss);
+    /!*path.join(__dirname, "./!**!/!*.html"),
+        path.join(__dirname, "./!**!/!*.vue"),
+        path.join(__dirname, "./!**!/!*.js"),
+        path.join(__dirname, "./!**!/!*.css")*!/
+});*/
 
 /*
  |--------------------------------------------------------------------------
@@ -12,8 +35,7 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
-
-// MediaManager
-mix.sass('resources/assets/vendor/MediaManager/sass/media.scss', 'public/assets/vendor/MediaManager/style.css')
-    .copyDirectory('resources/assets/vendor/MediaManager/dist', 'public/assets/vendor/MediaManager')
+   .sass('resources/assets/sass/app.scss', 'public/css').options({
+       processCssUrls: false, postCss:[tailwindcss('./tailwind.js')],
+    })
+    .purgeCss();
