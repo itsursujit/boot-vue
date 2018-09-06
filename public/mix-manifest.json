@@ -1,5 +1,26 @@
 {
     "/js/app.js": "/js/app.js",
+    "/js/address.js": "/js/address.js",
+    "/css/address.scss": "/css/address.scss",
+    "/css/blog.scss": "/css/blog.scss",
+    "/css/calendar.scss": "/css/calendar.scss",
+    "/css/contact.scss": "/css/contact.scss",
+    "/css/core.scss": "/css/core.scss",
+    "/css/email.scss": "/css/email.scss",
+    "/css/event.scss": "/css/event.scss",
+    "/css/media.scss": "/css/media.scss",
+    "/css/product.scss": "/css/product.scss",
+    "/css/site.scss": "/css/site.scss",
+    "/css/user.scss": "/css/user.scss",
     "/css/app.css": "/css/app.css",
-    "/assets/vendor/MediaManager/style.css": "/assets/vendor/MediaManager/style.css"
+    "/js/user.js": "/js/user.js",
+    "/js/site.js": "/js/site.js",
+    "/js/product.js": "/js/product.js",
+    "/js/media.js": "/js/media.js",
+    "/js/event.js": "/js/event.js",
+    "/js/email.js": "/js/email.js",
+    "/js/core.js": "/js/core.js",
+    "/js/contact.js": "/js/contact.js",
+    "/js/calendar.js": "/js/calendar.js",
+    "/js/blog.js": "/js/blog.js"
 }

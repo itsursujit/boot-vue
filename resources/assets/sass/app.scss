@@ -1,6 +1,10 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import "~normalize.css/normalize.css";
+@import "~suitcss-base/lib/base.css";
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,400i,700');
+
 
 // Variables
 @import "bulma";
+@import "bulma-extensions";

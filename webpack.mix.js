@@ -1,5 +1,25 @@
 let mix = require('laravel-mix');
+require("laravel-mix-purgecss");
 
+
+const fs = require('fs');
+const path = require('path');
+
+
+const moduleFolder = './Modules';
+
+const dirs = p => fs.readdirSync(p).filter(f => fs.statSync(path.resolve(p,f)).isDirectory());
+
+let modules = dirs(moduleFolder);
+
+modules.forEach(function(m){
+    let js = path.resolve(moduleFolder,m, 'Resources','assets','js', 'app.js');
+    mix.js(js, 'public/js/' +  m.toLowerCase()+'.js');
+
+    let scss = path.resolve(moduleFolder,m, 'Resources','assets','sass', 'app.scss');
+    mix.sass(scss, 'public/css/' + m.toLowerCase()+'.scss');
+
+});
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -12,8 +32,5 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
-
-// MediaManager
-mix.sass('resources/assets/vendor/MediaManager/sass/media.scss', 'public/assets/vendor/MediaManager/style.css')
-    .copyDirectory('resources/assets/vendor/MediaManager/dist', 'public/assets/vendor/MediaManager')
+   .sass('resources/assets/sass/app.scss', 'public/css')
+   .purgeCss();
